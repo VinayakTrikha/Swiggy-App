@@ -1,24 +1,18 @@
 {
-  "name": "namaste-react",
+  "name": "swiggy-project",
   "version": "1.0.0",
   "description": "SWIGGY PROJECT",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "test": "jest",
-    "watch-test": "jest --watch"
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/namastedev/namaste-react.git"
+    "url": "https://github.com/VinayakTrikha/Swiggy-App"
   },
   "keywords": [],
   "author": "Vinayak Trikha",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/namastedev/namaste-react/issues"
-  },
-  "homepage": "https://github.com/namastedev/namaste-react#readme",
   "devDependencies": {
     "@babel/core": "^7.22.9",
     "@babel/preset-env": "^7.22.9",
