@@ -29,10 +29,10 @@ const Body = () => {
 
     // Optional Chaining
     setListOfRestraunt(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurant(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -47,7 +47,7 @@ const Body = () => {
 
   const { loggedInUser, setUserName } = useContext(UserContext);
 
-  return listOfRestaurants?.length === 0 ? (
+  return listOfRestaurants?.length ==0  ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -102,7 +102,7 @@ const Body = () => {
         </div>
       </div>
       <div className="flex flex-wrap">
-        {filteredRestaurant.map((restaurant) => (
+        {filteredRestaurant?.map((restaurant) => (
           <Link
             key={restaurant?.info.id}
             to={"/restaurants/" + restaurant?.info.id}

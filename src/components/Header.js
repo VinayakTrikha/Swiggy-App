@@ -3,10 +3,14 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { removeToken } from "../utils/authSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const [btnNameReact, setBtnNameReact] = useState("Login");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onlineStatus = useOnlineStatus();
 
@@ -43,12 +47,12 @@ const Header = () => {
           <button
             className="login"
             onClick={() => {
-              btnNameReact === "Login"
-                ? setBtnNameReact("Logout")
-                : setBtnNameReact("Login");
+               dispatch(removeToken());
+               sessionStorage.removeItem('authToken')
+               navigate("/login");
             }}
           >
-            {btnNameReact}
+            Logout
           </button>
 
           <li className="px-4 ">{loggedInUser}</li>
